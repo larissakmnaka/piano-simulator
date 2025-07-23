@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#d6a2b817, #75425744), url(./assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 780px;
+    border-radius: 20px;
+    padding: 35px 40px;
+    background: linear-gradient(#ffaacd 96%, #6d3b44 4%);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #373843;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+}
+
+.column span {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.volume-slider input {
+    accent-color: #fff;
+}
+
+.keys-check input {
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    background-color: #cec4bf;
+}
+
+.keys-check input::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #373843;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0.3rem;
+    border-radius: inherit;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.keys-check input:checked::before {
+    left: 2.1rem;
+    background-color: #fff;
+}
+
+.piano-keys .key.hide span {
+  display: none;
+}
+
+.piano-keys {
+    display: flex;
+    margin-top: 40px;
+}
+
+.piano-keys span {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.key {
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    color: #a2a2a2;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.white {
+    width: 70px;
+    height: 230px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+}
+
+.white.active {
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #fff 0%, #eee 100%);
+}
+
+.black {
+    width: 44px;
+    height: 140px;
+    z-index: 2;
+    margin: 0 -22px 0 -22px;
+    border: 1px solid #000;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#333, #000);
+}
+
+.black.active {
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom #000, #434343);
+}
+
+@media (max-width: 710px) {
+    .container {
+        width: 98%;
+        border-radius: 20px;
+        padding: 35px 40px;
+        background: linear-gradient(#ffaacd 96%, #6d3b44 4%);
+    }
+}
+
+@media (max-width: 686px) {
+    header {
+        display: block;
+    }
+
+    .column {
+        margin: 5px 0 0;
+    }
+}
